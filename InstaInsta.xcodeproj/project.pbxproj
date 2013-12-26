@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C3FA9CF2186CA0470044C0CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF1186CA0470044C0CC /* Foundation.framework */; };
+		C3FA9CF4186CA0470044C0CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF3186CA0470044C0CC /* CoreGraphics.framework */; };
+		C3FA9CF6186CA0470044C0CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF5186CA0470044C0CC /* UIKit.framework */; };
+		C3FA9CF8186CA0470044C0CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF7186CA0470044C0CC /* CoreData.framework */; };
+		C3FA9CFE186CA0470044C0CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3FA9CFC186CA0470044C0CC /* InfoPlist.strings */; };
+		C3FA9D00186CA0470044C0CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FA9CFF186CA0470044C0CC /* main.m */; };
+		C3FA9D04186CA0470044C0CC /* ANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FA9D03186CA0470044C0CC /* ANAppDelegate.m */; };
+		C3FA9D07186CA0470044C0CC /* InstaInsta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3FA9D05186CA0470044C0CC /* InstaInsta.xcdatamodeld */; };
+		C3FA9D09186CA0470044C0CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3FA9D08186CA0470044C0CC /* Images.xcassets */; };
+		C3FA9D10186CA0470044C0CC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9D0F186CA0470044C0CC /* XCTest.framework */; };
+		C3FA9D11186CA0470044C0CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF1186CA0470044C0CC /* Foundation.framework */; };
+		C3FA9D12186CA0470044C0CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF5186CA0470044C0CC /* UIKit.framework */; };
+		C3FA9D13186CA0470044C0CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF7186CA0470044C0CC /* CoreData.framework */; };
+		C3FA9D1B186CA0470044C0CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3FA9D19186CA0470044C0CC /* InfoPlist.strings */; };
+		C3FA9D1D186CA0470044C0CC /* InstaInstaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FA9D1C186CA0470044C0CC /* InstaInstaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3FA9D14186CA0470044C0CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3FA9CE6186CA0470044C0CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3FA9CED186CA0470044C0CC;
+			remoteInfo = InstaInsta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C3FA9CEE186CA0470044C0CC /* InstaInsta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaInsta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3FA9CF1186CA0470044C0CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3FA9CF3186CA0470044C0CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C3FA9CF5186CA0470044C0CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C3FA9CF7186CA0470044C0CC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3FA9CFB186CA0470044C0CC /* InstaInsta-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaInsta-Info.plist"; sourceTree = "<group>"; };
+		C3FA9CFD186CA0470044C0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3FA9CFF186CA0470044C0CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3FA9D01186CA0470044C0CC /* InstaInsta-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InstaInsta-Prefix.pch"; sourceTree = "<group>"; };
+		C3FA9D02186CA0470044C0CC /* ANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANAppDelegate.h; sourceTree = "<group>"; };
+		C3FA9D03186CA0470044C0CC /* ANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANAppDelegate.m; sourceTree = "<group>"; };
+		C3FA9D06186CA0470044C0CC /* InstaInsta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstaInsta.xcdatamodel; sourceTree = "<group>"; };
+		C3FA9D08186CA0470044C0CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C3FA9D0E186CA0470044C0CC /* InstaInstaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaInstaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3FA9D0F186CA0470044C0CC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C3FA9D18186CA0470044C0CC /* InstaInstaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaInstaTests-Info.plist"; sourceTree = "<group>"; };
+		C3FA9D1A186CA0470044C0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3FA9D1C186CA0470044C0CC /* InstaInstaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaInstaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3FA9CEB186CA0470044C0CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FA9CF4186CA0470044C0CC /* CoreGraphics.framework in Frameworks */,
+				C3FA9CF8186CA0470044C0CC /* CoreData.framework in Frameworks */,
+				C3FA9CF6186CA0470044C0CC /* UIKit.framework in Frameworks */,
+				C3FA9CF2186CA0470044C0CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3FA9D0B186CA0470044C0CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FA9D10186CA0470044C0CC /* XCTest.framework in Frameworks */,
+				C3FA9D13186CA0470044C0CC /* CoreData.framework in Frameworks */,
+				C3FA9D12186CA0470044C0CC /* UIKit.framework in Frameworks */,
+				C3FA9D11186CA0470044C0CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C3FA9CE5186CA0470044C0CC = {
+			isa = PBXGroup;
+			children = (
+				C3FA9CF9186CA0470044C0CC /* InstaInsta */,
+				C3FA9D16186CA0470044C0CC /* InstaInstaTests */,
+				C3FA9CF0186CA0470044C0CC /* Frameworks */,
+				C3FA9CEF186CA0470044C0CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3FA9CEF186CA0470044C0CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA9CEE186CA0470044C0CC /* InstaInsta.app */,
+				C3FA9D0E186CA0470044C0CC /* InstaInstaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3FA9CF0186CA0470044C0CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA9CF1186CA0470044C0CC /* Foundation.framework */,
+				C3FA9CF3186CA0470044C0CC /* CoreGraphics.framework */,
+				C3FA9CF5186CA0470044C0CC /* UIKit.framework */,
+				C3FA9CF7186CA0470044C0CC /* CoreData.framework */,
+				C3FA9D0F186CA0470044C0CC /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3FA9CF9186CA0470044C0CC /* InstaInsta */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA9D02186CA0470044C0CC /* ANAppDelegate.h */,
+				C3FA9D03186CA0470044C0CC /* ANAppDelegate.m */,
+				C3FA9D08186CA0470044C0CC /* Images.xcassets */,
+				C3FA9D05186CA0470044C0CC /* InstaInsta.xcdatamodeld */,
+				C3FA9CFA186CA0470044C0CC /* Supporting Files */,
+			);
+			path = InstaInsta;
+			sourceTree = "<group>";
+		};
+		C3FA9CFA186CA0470044C0CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA9CFB186CA0470044C0CC /* InstaInsta-Info.plist */,
+				C3FA9CFC186CA0470044C0CC /* InfoPlist.strings */,
+				C3FA9CFF186CA0470044C0CC /* main.m */,
+				C3FA9D01186CA0470044C0CC /* InstaInsta-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C3FA9D16186CA0470044C0CC /* InstaInstaTests */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA9D1C186CA0470044C0CC /* InstaInstaTests.m */,
+				C3FA9D17186CA0470044C0CC /* Supporting Files */,
+			);
+			path = InstaInstaTests;
+			sourceTree = "<group>";
+		};
+		C3FA9D17186CA0470044C0CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA9D18186CA0470044C0CC /* InstaInstaTests-Info.plist */,
+				C3FA9D19186CA0470044C0CC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3FA9CED186CA0470044C0CC /* InstaInsta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3FA9D20186CA0470044C0CC /* Build configuration list for PBXNativeTarget "InstaInsta" */;
+			buildPhases = (
+				C3FA9CEA186CA0470044C0CC /* Sources */,
+				C3FA9CEB186CA0470044C0CC /* Frameworks */,
+				C3FA9CEC186CA0470044C0CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InstaInsta;
+			productName = InstaInsta;
+			productReference = C3FA9CEE186CA0470044C0CC /* InstaInsta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C3FA9D0D186CA0470044C0CC /* InstaInstaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3FA9D23186CA0470044C0CC /* Build configuration list for PBXNativeTarget "InstaInstaTests" */;
+			buildPhases = (
+				C3FA9D0A186CA0470044C0CC /* Sources */,
+				C3FA9D0B186CA0470044C0CC /* Frameworks */,
+				C3FA9D0C186CA0470044C0CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3FA9D15186CA0470044C0CC /* PBXTargetDependency */,
+			);
+			name = InstaInstaTests;
+			productName = InstaInstaTests;
+			productReference = C3FA9D0E186CA0470044C0CC /* InstaInstaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3FA9CE6186CA0470044C0CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AN;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = MSU;
+				TargetAttributes = {
+					C3FA9D0D186CA0470044C0CC = {
+						TestTargetID = C3FA9CED186CA0470044C0CC;
+					};
+				};
+			};
+			buildConfigurationList = C3FA9CE9186CA0470044C0CC /* Build configuration list for PBXProject "InstaInsta" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C3FA9CE5186CA0470044C0CC;
+			productRefGroup = C3FA9CEF186CA0470044C0CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3FA9CED186CA0470044C0CC /* InstaInsta */,
+				C3FA9D0D186CA0470044C0CC /* InstaInstaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3FA9CEC186CA0470044C0CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FA9CFE186CA0470044C0CC /* InfoPlist.strings in Resources */,
+				C3FA9D09186CA0470044C0CC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3FA9D0C186CA0470044C0CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FA9D1B186CA0470044C0CC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3FA9CEA186CA0470044C0CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FA9D00186CA0470044C0CC /* main.m in Sources */,
+				C3FA9D04186CA0470044C0CC /* ANAppDelegate.m in Sources */,
+				C3FA9D07186CA0470044C0CC /* InstaInsta.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C3FA9D0A186CA0470044C0CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3FA9D1D186CA0470044C0CC /* InstaInstaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3FA9D15186CA0470044C0CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3FA9CED186CA0470044C0CC /* InstaInsta */;
+			targetProxy = C3FA9D14186CA0470044C0CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C3FA9CFC186CA0470044C0CC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3FA9CFD186CA0470044C0CC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C3FA9D19186CA0470044C0CC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C3FA9D1A186CA0470044C0CC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3FA9D1E186CA0470044C0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C3FA9D1F186CA0470044C0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C3FA9D21186CA0470044C0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaInsta/InstaInsta-Prefix.pch";
+				INFOPLIST_FILE = "InstaInsta/InstaInsta-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C3FA9D22186CA0470044C0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaInsta/InstaInsta-Prefix.pch";
+				INFOPLIST_FILE = "InstaInsta/InstaInsta-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C3FA9D24186CA0470044C0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstaInsta.app/InstaInsta";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaInsta/InstaInsta-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "InstaInstaTests/InstaInstaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C3FA9D25186CA0470044C0CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/InstaInsta.app/InstaInsta";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "InstaInsta/InstaInsta-Prefix.pch";
+				INFOPLIST_FILE = "InstaInstaTests/InstaInstaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3FA9CE9186CA0470044C0CC /* Build configuration list for PBXProject "InstaInsta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3FA9D1E186CA0470044C0CC /* Debug */,
+				C3FA9D1F186CA0470044C0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3FA9D20186CA0470044C0CC /* Build configuration list for PBXNativeTarget "InstaInsta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3FA9D21186CA0470044C0CC /* Debug */,
+				C3FA9D22186CA0470044C0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C3FA9D23186CA0470044C0CC /* Build configuration list for PBXNativeTarget "InstaInstaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3FA9D24186CA0470044C0CC /* Debug */,
+				C3FA9D25186CA0470044C0CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3FA9D05186CA0470044C0CC /* InstaInsta.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3FA9D06186CA0470044C0CC /* InstaInsta.xcdatamodel */,
+			);
+			currentVersion = C3FA9D06186CA0470044C0CC /* InstaInsta.xcdatamodel */;
+			path = InstaInsta.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C3FA9CE6186CA0470044C0CC /* Project object */;
+}
