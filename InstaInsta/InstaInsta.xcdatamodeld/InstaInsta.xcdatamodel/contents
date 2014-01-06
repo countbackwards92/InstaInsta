@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="12F45" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Images" representedClassName="ANImages" syncable="YES">
+        <relationship name="low_resolution" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LowResolutionPhoto" inverseName="image" inverseEntity="LowResolutionPhoto" syncable="YES"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Post" inverseName="images" inverseEntity="Post" syncable="YES"/>
+        <relationship name="standard_resolution" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StandardResolutionPhoto" inverseName="image" inverseEntity="StandardResolutionPhoto" syncable="YES"/>
+        <relationship name="thumbnail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Thumbnail" inverseName="image" inverseEntity="Thumbnail" syncable="YES"/>
+    </entity>
+    <entity name="LowResolutionPhoto" representedClassName="ANLowRes" syncable="YES">
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Images" inverseName="low_resolution" inverseEntity="Images" syncable="YES"/>
+    </entity>
+    <entity name="Post" representedClassName="ANPost" syncable="YES">
+        <attribute name="caption_text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_time" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="img" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="likes_count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="post_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Images" inverseName="post" inverseEntity="Images" syncable="YES"/>
+    </entity>
+    <entity name="StandardResolutionPhoto" representedClassName="ANStandRes" syncable="YES">
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Images" inverseName="standard_resolution" inverseEntity="Images" syncable="YES"/>
+    </entity>
+    <entity name="Thumbnail" representedClassName="ANThumb" syncable="YES">
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Images" inverseName="thumbnail" inverseEntity="Images" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Images" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="LowResolutionPhoto" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Post" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="StandardResolutionPhoto" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Thumbnail" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
 </model>
