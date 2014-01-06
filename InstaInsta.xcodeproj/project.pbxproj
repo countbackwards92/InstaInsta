@@ -12,6 +12,13 @@
 		5B01A9CB187A405F0059529C /* ANTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A9C7187A405F0059529C /* ANTableViewController.m */; };
 		5B01A9CC187A405F0059529C /* ANTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01A9C8187A405F0059529C /* ANTableViewController.xib */; };
 		5B5FC1D7187AECDA00320BD9 /* Screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FC1D6187AECDA00320BD9 /* Screenshot.png */; };
+		5B5FC1E5187AF32200320BD9 /* ANInstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FC1E4187AF32200320BD9 /* ANInstagramClient.m */; };
+		5B5FC1E8187AF41800320BD9 /* ANPopularMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FC1E7187AF41800320BD9 /* ANPopularMedia.m */; };
+		5B5FC1EC187AF71B00320BD9 /* ANPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FC1EA187AF71B00320BD9 /* ANPopularViewController.m */; };
+		5B5FC1ED187AF71B00320BD9 /* ANPopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FC1EB187AF71B00320BD9 /* ANPopularViewController.xib */; };
+		5B5FC1F0187AFAB100320BD9 /* ANCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FC1EF187AFAB100320BD9 /* ANCollectionViewCell.m */; };
+		5B5FC1F4187B03C200320BD9 /* ANPopularDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FC1F2187B03C200320BD9 /* ANPopularDetailViewController.m */; };
+		5B5FC1F5187B03C200320BD9 /* ANPopularDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FC1F3187B03C200320BD9 /* ANPopularDetailViewController.xib */; };
 		5B91A62C1879D9080015130C /* ANImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A62B1879D9080015130C /* ANImages.m */; };
 		5B91A62F1879D9080015130C /* ANStandRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A62E1879D9080015130C /* ANStandRes.m */; };
 		5B91A6321879D9080015130C /* ANPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A6311879D9080015130C /* ANPost.m */; };
@@ -63,6 +70,18 @@
 		5B01A9C7187A405F0059529C /* ANTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTableViewController.m; sourceTree = "<group>"; };
 		5B01A9C8187A405F0059529C /* ANTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTableViewController.xib; sourceTree = "<group>"; };
 		5B5FC1D6187AECDA00320BD9 /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot.png; sourceTree = "<group>"; };
+		5B5FC1E3187AF32200320BD9 /* ANInstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANInstagramClient.h; sourceTree = "<group>"; };
+		5B5FC1E4187AF32200320BD9 /* ANInstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANInstagramClient.m; sourceTree = "<group>"; };
+		5B5FC1E6187AF41800320BD9 /* ANPopularMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPopularMedia.h; sourceTree = "<group>"; };
+		5B5FC1E7187AF41800320BD9 /* ANPopularMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPopularMedia.m; sourceTree = "<group>"; };
+		5B5FC1E9187AF71B00320BD9 /* ANPopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPopularViewController.h; sourceTree = "<group>"; };
+		5B5FC1EA187AF71B00320BD9 /* ANPopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPopularViewController.m; sourceTree = "<group>"; };
+		5B5FC1EB187AF71B00320BD9 /* ANPopularViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPopularViewController.xib; sourceTree = "<group>"; };
+		5B5FC1EE187AFAB100320BD9 /* ANCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANCollectionViewCell.h; sourceTree = "<group>"; };
+		5B5FC1EF187AFAB100320BD9 /* ANCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANCollectionViewCell.m; sourceTree = "<group>"; };
+		5B5FC1F1187B03C200320BD9 /* ANPopularDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPopularDetailViewController.h; sourceTree = "<group>"; };
+		5B5FC1F2187B03C200320BD9 /* ANPopularDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPopularDetailViewController.m; sourceTree = "<group>"; };
+		5B5FC1F3187B03C200320BD9 /* ANPopularDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPopularDetailViewController.xib; sourceTree = "<group>"; };
 		5B91A62A1879D9080015130C /* ANImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANImages.h; path = Model/ANImages.h; sourceTree = "<group>"; };
 		5B91A62B1879D9080015130C /* ANImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANImages.m; path = Model/ANImages.m; sourceTree = "<group>"; };
 		5B91A62D1879D9080015130C /* ANStandRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANStandRes.h; path = Model/ANStandRes.h; sourceTree = "<group>"; };
@@ -188,6 +207,18 @@
 		C3FA9CF9186CA0470044C0CC /* InstaInsta */ = {
 			isa = PBXGroup;
 			children = (
+				5B5FC1E9187AF71B00320BD9 /* ANPopularViewController.h */,
+				5B5FC1EA187AF71B00320BD9 /* ANPopularViewController.m */,
+				5B5FC1F1187B03C200320BD9 /* ANPopularDetailViewController.h */,
+				5B5FC1F2187B03C200320BD9 /* ANPopularDetailViewController.m */,
+				5B5FC1F3187B03C200320BD9 /* ANPopularDetailViewController.xib */,
+				5B5FC1EE187AFAB100320BD9 /* ANCollectionViewCell.h */,
+				5B5FC1EF187AFAB100320BD9 /* ANCollectionViewCell.m */,
+				5B5FC1EB187AF71B00320BD9 /* ANPopularViewController.xib */,
+				5B5FC1E6187AF41800320BD9 /* ANPopularMedia.h */,
+				5B5FC1E7187AF41800320BD9 /* ANPopularMedia.m */,
+				5B5FC1E3187AF32200320BD9 /* ANInstagramClient.h */,
+				5B5FC1E4187AF32200320BD9 /* ANInstagramClient.m */,
 				5BDCD01F187865DD00153EF5 /* Model */,
 				C385DEB6186CC9EF00369C5E /* first.png */,
 				C3FA9D02186CA0470044C0CC /* ANAppDelegate.h */,
@@ -327,12 +358,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B01A9CC187A405F0059529C /* ANTableViewController.xib in Resources */,
+				5B5FC1F5187B03C200320BD9 /* ANPopularDetailViewController.xib in Resources */,
 				5B91A63D1879E4080015130C /* ANPhotoViewController.xib in Resources */,
 				C36EAFCA1876183E0085881C /* ANLoginViewController.xib in Resources */,
 				C3FA9CFE186CA0470044C0CC /* InfoPlist.strings in Resources */,
 				5B01A9CA187A405F0059529C /* ANTableCellEditController.xib in Resources */,
 				C3FA9D09186CA0470044C0CC /* Images.xcassets in Resources */,
 				C385DEB7186CC9EF00369C5E /* first.png in Resources */,
+				5B5FC1ED187AF71B00320BD9 /* ANPopularViewController.xib in Resources */,
 				C3FA9D2A186CA06D0044C0CC /* ANInstaFeedViewController.xib in Resources */,
 				5B5FC1D7187AECDA00320BD9 /* Screenshot.png in Resources */,
 			);
@@ -387,19 +420,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3FA9D00186CA0470044C0CC /* main.m in Sources */,
+				5B5FC1EC187AF71B00320BD9 /* ANPopularViewController.m in Sources */,
 				5B01A9C9187A405F0059529C /* ANTableCellEditController.m in Sources */,
 				C36EAFC91876183E0085881C /* ANLoginViewController.m in Sources */,
+				5B5FC1E8187AF41800320BD9 /* ANPopularMedia.m in Sources */,
 				5B91A6351879D9080015130C /* ANLowRes.m in Sources */,
 				5B91A63C1879E4080015130C /* ANPhotoViewController.m in Sources */,
 				5B91A62F1879D9080015130C /* ANStandRes.m in Sources */,
 				5B91A62C1879D9080015130C /* ANImages.m in Sources */,
 				5B91A6321879D9080015130C /* ANPost.m in Sources */,
+				5B5FC1E5187AF32200320BD9 /* ANInstagramClient.m in Sources */,
 				C3FA9D04186CA0470044C0CC /* ANAppDelegate.m in Sources */,
 				5B91A6381879D9080015130C /* ANThumb.m in Sources */,
 				5BD5299518764F0300874E82 /* UITabBarController+EnableAllDeleteThis.m in Sources */,
+				5B5FC1F0187AFAB100320BD9 /* ANCollectionViewCell.m in Sources */,
 				C3FA9D07186CA0470044C0CC /* InstaInsta.xcdatamodeld in Sources */,
 				C36EAFCE18763AD60085881C /* ANModel.m in Sources */,
 				5B01A9CB187A405F0059529C /* ANTableViewController.m in Sources */,
+				5B5FC1F4187B03C200320BD9 /* ANPopularDetailViewController.m in Sources */,
 				C3FA9D29186CA06D0044C0CC /* ANInstaFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

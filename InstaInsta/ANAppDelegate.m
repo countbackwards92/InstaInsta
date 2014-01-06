@@ -9,7 +9,7 @@
 #import "ANAppDelegate.h"
 #import "ANInstaFeedViewController.h"
 #import "ANLoginViewController.h"
-
+#import "ANPopularViewController.h"
 @implementation ANAppDelegate
 
 
@@ -87,13 +87,21 @@
     
     ANLoginViewController *viewController = [[ANLoginViewController alloc] initWithNibName:@"ANLoginViewController" bundle:nil];
     ANInstaFeedViewController *feedViewController = [[ANInstaFeedViewController alloc]initWithNibName:@"ANInstaFeedViewController" bundle:nil];
+    ANPopularViewController *popViewController = [[ANPopularViewController alloc]initWithNibName:@"ANPopularViewController" bundle:nil];
 
     UINavigationController *feedNavViewController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
+    UINavigationController *popularNavController = [[UINavigationController alloc] initWithRootViewController:popViewController];
+    
+    popViewController.navigationItem.title = @"Popular feed";
+    
+    popularNavController.tabBarItem.title = @"Popular photos";
+    popularNavController.navigationBar.translucent = NO;
     feedNavViewController.tabBarItem.title = @"User Feed";
     feedNavViewController.navigationBar.translucent = NO;
     
     [tabController addChildViewController:viewController];
     [tabController addChildViewController:feedNavViewController];
+    [tabController addChildViewController:popularNavController];
     
     tabController.tabBar.translucent = NO;
     

@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     
-    NSString *authString = @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token";
+    NSString *authString = @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&scope=likes&response_type=token";
     NSString * const clientId = @"2c0b70e803cc4cc6b157519fcff40924";
     NSString * const redirectUrl = @"http://localhost:3000";
     
@@ -55,7 +55,7 @@
 shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {		
-    NSString *lol = request.URL.absoluteString;
+//    NSString *lol = request.URL.absoluteString;
     if ([request.URL.absoluteString rangeOfString:@"#"].location != NSNotFound) {
         
         NSString* params = [[request.URL.absoluteString componentsSeparatedByString:@"#"] objectAtIndex:1];
