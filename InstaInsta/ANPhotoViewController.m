@@ -113,9 +113,9 @@
 - (CGFloat) textHeight:(NSAttributedString *)attr_text
            forWidth:(CGFloat)width
 {
-    CGSize textSize = [attr_text boundingRectWithSize:CGSizeMake(width, 1000.0f)  options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
+    CGSize textSize = [attr_text boundingRectWithSize:CGSizeMake(width -50 , 1000.0f)  options:NSStringDrawingUsesLineFragmentOrigin context:nil].size;
     
-    return textSize.height + PADDING * 3;
+    return textSize.height + PADDING;
 }
 
 - (void) updateText
@@ -123,8 +123,9 @@
     CGPoint hereWeWrite = CGPointMake(50, 50);
     UIImage *temp = [self.initialImage copy];
     for (NSAttributedString *str in self.attr_items) {
-        hereWeWrite.y += [self textHeight:str forWidth:[temp size].width];
+
         temp = [ANPhotoViewController drawAttributedText:str inImage:temp atPoint:hereWeWrite];
+        hereWeWrite.y += [self textHeight:str forWidth:[temp size].width];
     }
     [self.imageView setImage:temp];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
