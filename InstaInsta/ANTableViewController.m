@@ -43,6 +43,7 @@
    // NSObject *fetch = [self.items objectAtIndex:indexPath.row];
    // cell.textLabel.text = [self.items objectAtIndex:indexPath.row];
     cell.textLabel.attributedText = [self.attr_items objectAtIndex:indexPath.row];
+
     cell.showsReorderControl = YES;
     
     cell.textLabel.numberOfLines = 0;
