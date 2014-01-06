@@ -11,6 +11,7 @@
 		5B01A9CA187A405F0059529C /* ANTableCellEditController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01A9C5187A405F0059529C /* ANTableCellEditController.xib */; };
 		5B01A9CB187A405F0059529C /* ANTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01A9C7187A405F0059529C /* ANTableViewController.m */; };
 		5B01A9CC187A405F0059529C /* ANTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B01A9C8187A405F0059529C /* ANTableViewController.xib */; };
+		5B5FC1D7187AECDA00320BD9 /* Screenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FC1D6187AECDA00320BD9 /* Screenshot.png */; };
 		5B91A62C1879D9080015130C /* ANImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A62B1879D9080015130C /* ANImages.m */; };
 		5B91A62F1879D9080015130C /* ANStandRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A62E1879D9080015130C /* ANStandRes.m */; };
 		5B91A6321879D9080015130C /* ANPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A6311879D9080015130C /* ANPost.m */; };
@@ -61,6 +62,7 @@
 		5B01A9C6187A405F0059529C /* ANTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANTableViewController.h; sourceTree = "<group>"; };
 		5B01A9C7187A405F0059529C /* ANTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANTableViewController.m; sourceTree = "<group>"; };
 		5B01A9C8187A405F0059529C /* ANTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANTableViewController.xib; sourceTree = "<group>"; };
+		5B5FC1D6187AECDA00320BD9 /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot.png; sourceTree = "<group>"; };
 		5B91A62A1879D9080015130C /* ANImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANImages.h; path = Model/ANImages.h; sourceTree = "<group>"; };
 		5B91A62B1879D9080015130C /* ANImages.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANImages.m; path = Model/ANImages.m; sourceTree = "<group>"; };
 		5B91A62D1879D9080015130C /* ANStandRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANStandRes.h; path = Model/ANStandRes.h; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				C3FA9D03186CA0470044C0CC /* ANAppDelegate.m */,
 				C3FA9D26186CA06D0044C0CC /* ANInstaFeedViewController.h */,
 				C3FA9D27186CA06D0044C0CC /* ANInstaFeedViewController.m */,
+				5B5FC1D6187AECDA00320BD9 /* Screenshot.png */,
 				5B91A6391879E4080015130C /* ANPhotoViewController.h */,
 				5B91A63A1879E4080015130C /* ANPhotoViewController.m */,
 				5B01A9C3187A405F0059529C /* ANTableCellEditController.h */,
@@ -331,6 +334,7 @@
 				C3FA9D09186CA0470044C0CC /* Images.xcassets in Resources */,
 				C385DEB7186CC9EF00369C5E /* first.png in Resources */,
 				C3FA9D2A186CA06D0044C0CC /* ANInstaFeedViewController.xib in Resources */,
+				5B5FC1D7187AECDA00320BD9 /* Screenshot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANPhotoViewController">
             <connections>
+                <outlet property="activityIndicator" destination="9Kf-FH-8gL" id="gue-kV-d41"/>
                 <outlet property="imageView" destination="Ub5-z9-fao" id="JUj-k2-FcD"/>
+                <outlet property="saveButton" destination="rEj-vV-X9I" id="Zsb-Hw-RFz"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -24,11 +26,32 @@
                         <constraint firstAttribute="height" constant="320" id="Pgb-uG-jmN"/>
                     </constraints>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEj-vV-X9I">
+                    <rect key="frame" x="88" y="328" width="144" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3Xe-mV-VVi"/>
+                    </constraints>
+                    <state key="normal" title="Save to Photo library">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="saveToLibrary:" destination="-1" eventType="touchUpInside" id="gbU-kI-gcH"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Kf-FH-8gL">
+                    <rect key="frame" x="150" y="150" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="rEj-vV-X9I" firstAttribute="top" secondItem="Ub5-z9-fao" secondAttribute="bottom" constant="8" symbolic="YES" id="KKz-cC-p6o"/>
                 <constraint firstAttribute="centerX" secondItem="Ub5-z9-fao" secondAttribute="centerX" id="O6q-Ah-LAH"/>
                 <constraint firstItem="Ub5-z9-fao" firstAttribute="top" secondItem="1" secondAttribute="top" id="S0g-2F-nOJ"/>
+                <constraint firstItem="Ub5-z9-fao" firstAttribute="centerX" secondItem="rEj-vV-X9I" secondAttribute="centerX" id="YT8-x3-VGu"/>
+                <constraint firstItem="Ub5-z9-fao" firstAttribute="centerY" secondItem="9Kf-FH-8gL" secondAttribute="centerY" id="t7O-Hs-4Ye"/>
+                <constraint firstItem="Ub5-z9-fao" firstAttribute="centerX" secondItem="9Kf-FH-8gL" secondAttribute="centerX" id="umB-RN-PdR"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

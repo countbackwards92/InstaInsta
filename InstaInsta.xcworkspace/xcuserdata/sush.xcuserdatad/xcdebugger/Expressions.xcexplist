@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[RKObjectManager getObjectsAtPath:parameters:success:failure:]:RKObjectManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "request.URL.absoluteString">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ANPhotoViewController viewDidLoad]:ANPhotoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ANLoginViewController viewDidLoad]:ANLoginViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ANInstaFeedViewController tableView:didSelectRowAtIndexPath:]:ANInstaFeedViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "post.images.standart_resolution.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AFHTTPClient requestWithMethod:path:parameters:]:AFHTTPClient.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ANLoginViewController webView:shouldStartLoadWithRequest:navigationType:]:ANLoginViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

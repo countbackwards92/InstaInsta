@@ -17,4 +17,8 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSMutableArray *attr_items;
+@property (strong, nonatomic) NSMutableArray *attrib;
+
 @end
