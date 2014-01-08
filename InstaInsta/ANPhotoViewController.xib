@@ -7,6 +7,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANPhotoViewController">
             <connections>
                 <outlet property="activityIndicator" destination="9Kf-FH-8gL" id="gue-kV-d41"/>
+                <outlet property="buttonCell" destination="Mt1-nf-1tY" id="FZP-76-ZBE"/>
+                <outlet property="imageCell" destination="fT3-xR-258" id="K3b-iw-Pmw"/>
                 <outlet property="imageView" destination="Ub5-z9-fao" id="JUj-k2-FcD"/>
                 <outlet property="saveButton" destination="rEj-vV-X9I" id="Zsb-Hw-RFz"/>
                 <outlet property="view" destination="1" id="3"/>
@@ -17,44 +19,79 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-z9-fao">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="320" id="5IF-0C-v5N"/>
-                        <constraint firstAttribute="height" constant="320" id="Pgb-uG-jmN"/>
-                    </constraints>
-                </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEj-vV-X9I">
-                    <rect key="frame" x="88" y="328" width="144" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="3Xe-mV-VVi"/>
-                    </constraints>
-                    <state key="normal" title="Save to Photo library">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="saveToLibrary:" destination="-1" eventType="touchUpInside" id="gbU-kI-gcH"/>
-                    </connections>
-                </button>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Kf-FH-8gL">
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Kf-FH-8gL">
                     <rect key="frame" x="150" y="150" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8vH-NI-fTy">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="NDr-qQ-Vj1"/>
+                        <outlet property="delegate" destination="-1" id="yFF-lG-yZX"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="rEj-vV-X9I" firstAttribute="top" secondItem="Ub5-z9-fao" secondAttribute="bottom" constant="8" symbolic="YES" id="KKz-cC-p6o"/>
-                <constraint firstAttribute="centerX" secondItem="Ub5-z9-fao" secondAttribute="centerX" id="O6q-Ah-LAH"/>
-                <constraint firstItem="Ub5-z9-fao" firstAttribute="top" secondItem="1" secondAttribute="top" id="S0g-2F-nOJ"/>
-                <constraint firstItem="Ub5-z9-fao" firstAttribute="centerX" secondItem="rEj-vV-X9I" secondAttribute="centerX" id="YT8-x3-VGu"/>
-                <constraint firstItem="Ub5-z9-fao" firstAttribute="centerY" secondItem="9Kf-FH-8gL" secondAttribute="centerY" id="t7O-Hs-4Ye"/>
-                <constraint firstItem="Ub5-z9-fao" firstAttribute="centerX" secondItem="9Kf-FH-8gL" secondAttribute="centerX" id="umB-RN-PdR"/>
+                <constraint firstAttribute="trailing" secondItem="8vH-NI-fTy" secondAttribute="trailing" id="O3D-ii-fYf"/>
+                <constraint firstAttribute="bottom" secondItem="8vH-NI-fTy" secondAttribute="bottom" id="WGf-qc-oLg"/>
+                <constraint firstItem="8vH-NI-fTy" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="hQq-e9-yHp"/>
+                <constraint firstItem="8vH-NI-fTy" firstAttribute="top" secondItem="1" secondAttribute="top" id="pgN-J0-dJP"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="278" id="fT3-xR-258">
+            <rect key="frame" x="0.0" y="0.0" width="280" height="278"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fT3-xR-258" id="1Ui-am-hxa">
+                <rect key="frame" x="0.0" y="0.0" width="280" height="277"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-z9-fao">
+                        <rect key="frame" x="5" y="2" width="270" height="270"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="270" id="A3S-an-G6N"/>
+                            <constraint firstAttribute="width" constant="270" id="Pop-aw-dks"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ub5-z9-fao" firstAttribute="leading" secondItem="1Ui-am-hxa" secondAttribute="leading" priority="998" constant="20" symbolic="YES" id="40F-vK-PjY"/>
+                    <constraint firstAttribute="centerX" secondItem="Ub5-z9-fao" secondAttribute="centerX" id="Ffb-eg-Tcu"/>
+                    <constraint firstAttribute="trailing" secondItem="Ub5-z9-fao" secondAttribute="trailing" priority="998" constant="20" symbolic="YES" id="LLB-zK-SP6"/>
+                    <constraint firstAttribute="bottom" secondItem="Ub5-z9-fao" secondAttribute="bottom" constant="5" id="sh2-3X-YzV"/>
+                    <constraint firstItem="Ub5-z9-fao" firstAttribute="top" secondItem="1Ui-am-hxa" secondAttribute="top" priority="998" id="vvw-OX-TRA"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="24" id="Mt1-nf-1tY">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="24"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mt1-nf-1tY" id="onN-aP-AUq">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="23"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEj-vV-X9I">
+                        <rect key="frame" x="88" y="-3" width="144" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Save to Photo library">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="saveToLibrary:" destination="-1" eventType="touchUpInside" id="gbU-kI-gcH"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="rEj-vV-X9I" secondAttribute="centerX" id="4eQ-Ph-bom"/>
+                    <constraint firstAttribute="centerY" secondItem="rEj-vV-X9I" secondAttribute="centerY" constant="-0.5" id="MLM-44-QrD"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
     </objects>
 </document>

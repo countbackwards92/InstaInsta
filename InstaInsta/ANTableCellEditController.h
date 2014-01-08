@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANTableCellEditController : UIViewController
+@interface ANTableCellEditController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableString *initialString;
 @property BOOL isInitBold;

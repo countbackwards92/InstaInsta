@@ -11,13 +11,19 @@
 
 @interface ANPopularMedia : NSObject
 
-@property (nonatomic, strong) NSString* thumbnailUrl;
-@property (nonatomic, strong) NSString* standardUrl;
-@property (nonatomic, strong) NSString* media_id;
+@property (nonatomic, strong) NSString *thumbnailUrl;
+@property (nonatomic, strong) NSString *standardUrl;
+@property (nonatomic, strong) NSString *media_id;
+@property (nonatomic, strong) NSString *user_id;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *user_avatar;
 @property (nonatomic) NSUInteger likes;
 
-+ (void)getPopularMediWithAccessToken:(NSString *)accessToken
-                                block:(void (^)(NSArray *records))block;
+@property (nonatomic, strong) NSString *load_more_url;
+
++ (void)getMediWithPath:(NSString *)path
+            AccessToken:(NSString *)accessToken
+                  block:(void (^)(NSArray *records))block;
 
 
 @end

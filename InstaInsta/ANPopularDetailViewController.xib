@@ -7,9 +7,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANPopularDetailViewController">
             <connections>
                 <outlet property="activityIndicator" destination="jdp-rh-1zy" id="uJZ-fr-cjK"/>
+                <outlet property="avatarLabel" destination="v6b-fY-XMb" id="ITN-oK-H1x"/>
                 <outlet property="imageView" destination="pB8-4s-Gkn" id="UR1-x3-1V1"/>
                 <outlet property="likesButton" destination="XgZ-Af-9eQ" id="mjZ-nf-Lnh"/>
+                <outlet property="likesCell" destination="R59-ZH-SVf" id="z90-9E-eZQ"/>
                 <outlet property="likesLabel" destination="Ptw-gx-U5V" id="VkW-73-Zzt"/>
+                <outlet property="photoCell" destination="gQZ-7S-t2P" id="mcd-3f-TpK"/>
+                <outlet property="userCell" destination="eTH-CR-Zl9" id="mjv-8Y-HS3"/>
+                <outlet property="usernameButton" destination="gvt-Fh-AeW" id="fS0-z3-aDD"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -18,47 +23,126 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-4s-Gkn">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cjX-uR-dr4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="320" id="38d-dM-P00"/>
-                        <constraint firstAttribute="width" constant="320" id="6d0-9f-Umk"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-gx-U5V">
-                    <rect key="frame" x="20" y="328" width="77" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgZ-Af-9eQ">
-                    <rect key="frame" x="251" y="328" width="49" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Like♥">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="LIKELIKE:" destination="-1" eventType="touchUpInside" id="u61-Hn-yGn"/>
+                        <outlet property="dataSource" destination="-1" id="W78-vn-Dfv"/>
+                        <outlet property="delegate" destination="-1" id="lmm-ad-V12"/>
                     </connections>
-                </button>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-rh-1zy">
-                    <rect key="frame" x="150" y="150" width="20" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </activityIndicatorView>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ptw-gx-U5V" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="CxG-Ac-xNJ"/>
-                <constraint firstAttribute="centerX" secondItem="pB8-4s-Gkn" secondAttribute="centerX" id="EtR-Rc-CO7"/>
-                <constraint firstAttribute="trailing" secondItem="XgZ-Af-9eQ" secondAttribute="trailing" constant="20" symbolic="YES" id="Y4V-bo-SiA"/>
-                <constraint firstItem="Ptw-gx-U5V" firstAttribute="top" secondItem="pB8-4s-Gkn" secondAttribute="bottom" constant="8" symbolic="YES" id="axS-si-79J"/>
-                <constraint firstItem="XgZ-Af-9eQ" firstAttribute="top" secondItem="pB8-4s-Gkn" secondAttribute="bottom" constant="8" symbolic="YES" id="dz4-c6-e0D"/>
-                <constraint firstItem="pB8-4s-Gkn" firstAttribute="top" secondItem="1" secondAttribute="top" id="vjE-XD-QEd"/>
+                <constraint firstItem="cjX-uR-dr4" firstAttribute="top" secondItem="1" secondAttribute="top" id="Eu8-Wk-9VU"/>
+                <constraint firstItem="cjX-uR-dr4" firstAttribute="leading" secondItem="1" secondAttribute="leading" id="PaB-qz-KVF"/>
+                <constraint firstAttribute="bottom" secondItem="cjX-uR-dr4" secondAttribute="bottom" id="q0s-as-BL7"/>
+                <constraint firstAttribute="trailing" secondItem="cjX-uR-dr4" secondAttribute="trailing" id="x0d-i7-5Ke"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="335" id="gQZ-7S-t2P">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQZ-7S-t2P" id="GN0-47-m44">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="286"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-4s-Gkn">
+                        <rect key="frame" x="20" y="4" width="280" height="267"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="279" id="2Fy-qA-WQ5"/>
+                            <constraint firstAttribute="width" constant="280" id="kMc-zX-Sgb"/>
+                        </constraints>
+                    </imageView>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-rh-1zy">
+                        <rect key="frame" x="150" y="134" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pB8-4s-Gkn" firstAttribute="centerY" secondItem="jdp-rh-1zy" secondAttribute="centerY" id="MvA-Rx-vV7"/>
+                    <constraint firstAttribute="centerY" secondItem="pB8-4s-Gkn" secondAttribute="centerY" id="Nrh-Et-vPM"/>
+                    <constraint firstItem="pB8-4s-Gkn" firstAttribute="centerX" secondItem="jdp-rh-1zy" secondAttribute="centerX" id="p7R-Fd-Wvu"/>
+                    <constraint firstAttribute="centerX" secondItem="pB8-4s-Gkn" secondAttribute="centerX" id="zu1-5B-S3Q"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="22" id="R59-ZH-SVf">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="R59-ZH-SVf" id="Ndu-DG-TkL">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XgZ-Af-9eQ">
+                        <rect key="frame" x="251" y="-5" width="49" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="1xd-nC-bVo"/>
+                        </constraints>
+                        <state key="normal" title="Like♥">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="LIKELIKE:" destination="-1" eventType="touchUpInside" id="u61-Hn-yGn"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-gx-U5V">
+                        <rect key="frame" x="20" y="0.0" width="77" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="kew-VJ-c7N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XgZ-Af-9eQ" secondAttribute="trailing" constant="20" symbolic="YES" id="DZO-Hv-d4I"/>
+                    <constraint firstItem="XgZ-Af-9eQ" firstAttribute="centerY" secondItem="Ptw-gx-U5V" secondAttribute="centerY" id="a6m-YP-WNo"/>
+                    <constraint firstItem="Ptw-gx-U5V" firstAttribute="leading" secondItem="Ndu-DG-TkL" secondAttribute="leading" constant="20" symbolic="YES" id="dxM-3R-KaX"/>
+                    <constraint firstItem="Ptw-gx-U5V" firstAttribute="top" secondItem="Ndu-DG-TkL" secondAttribute="top" id="iB4-FF-0Xm"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="58" id="eTH-CR-Zl9">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="58"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eTH-CR-Zl9" id="N68-5m-Of5">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v6b-fY-XMb">
+                        <rect key="frame" x="20" y="9" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="9Kl-oN-HUl"/>
+                            <constraint firstAttribute="width" constant="40" id="DEM-rI-oSh"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvt-Fh-AeW">
+                        <rect key="frame" x="68" y="14" width="232" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="userpageTap:" destination="-1" eventType="touchUpInside" id="B7a-qY-Ozn"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gvt-Fh-AeW" firstAttribute="leading" secondItem="v6b-fY-XMb" secondAttribute="trailing" constant="8" symbolic="YES" id="AIG-Fh-7xb"/>
+                    <constraint firstItem="gvt-Fh-AeW" firstAttribute="centerY" secondItem="v6b-fY-XMb" secondAttribute="centerY" id="Gz1-d9-IBo"/>
+                    <constraint firstAttribute="trailing" secondItem="gvt-Fh-AeW" secondAttribute="trailing" constant="20" symbolic="YES" id="Nmi-kE-1cf"/>
+                    <constraint firstItem="v6b-fY-XMb" firstAttribute="leading" secondItem="N68-5m-Of5" secondAttribute="leading" constant="20" symbolic="YES" id="Oxn-P6-Val"/>
+                    <constraint firstAttribute="centerY" secondItem="v6b-fY-XMb" secondAttribute="centerY" constant="-0.5" id="dsc-Sr-VGb"/>
+                </constraints>
+            </tableViewCellContentView>
+        </tableViewCell>
     </objects>
 </document>

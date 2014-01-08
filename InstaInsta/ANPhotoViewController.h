@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANPhotoViewController : UIViewController
+@interface ANPhotoViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSString *URLString;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

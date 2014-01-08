@@ -10,11 +10,13 @@
 #import "ANInstagramClient.h"
 
 
-@interface ANPopularDetailViewController : UIViewController
+@interface ANPopularDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property NSUInteger incomingLikeCount;
 @property (strong, nonatomic) NSString *media_id;
 @property (strong, nonatomic) NSString *imageUrl;
-
+@property (strong, nonatomic) NSString *username;
+@property (strong, nonatomic) NSString *user_id;
+@property (strong, nonatomic) NSString *user_avatar;
 
 @end

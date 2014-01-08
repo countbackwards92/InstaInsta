@@ -14,6 +14,12 @@
 @property (strong, nonatomic) UIImage *initialImage;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UITableViewCell *imageCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *buttonCell;
+
+
+@property (strong, nonatomic) NSMutableArray *cells;
+
 @end
 
 @implementation ANPhotoViewController
@@ -74,6 +80,10 @@
     [self.activityIndicator startAnimating];
     self.saveButton.enabled = NO;
     
+    self.cells = [NSMutableArray arrayWithObjects:self.imageCell, self.buttonCell, nil];
+    for (UITableViewCell *cell in self.cells)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         
         self.initialImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.URLString]]];
@@ -87,6 +97,27 @@
     });
     
 }
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.cells count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.cells objectAtIndex:indexPath.row];
+}
+
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.cells objectAtIndex:indexPath.row];
+    return cell.bounds.size.height;  }
+
 - (IBAction)saveToLibrary:(id)sender {
     [self.activityIndicator setHidden:NO];
    [self.activityIndicator startAnimating];

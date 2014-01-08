@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UISwitch *isItalic;
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
 
+
+@property (strong, nonatomic) IBOutlet UITableViewCell *slidersCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *textCell;
+@property (strong, nonatomic) NSArray *cells;
+
 @end
 
 @implementation ANTableCellEditController
@@ -78,6 +83,10 @@
     
     [self.textView setFont:currentFont];
     [self.textView setTextColor:[UIColor colorWithHue:self.colorSlider.value saturation:1 brightness:1 alpha:1.0]];
+    
+    self.cells = [NSArray arrayWithObjects:self.slidersCell, self.textCell, nil];
+    for (UITableViewCell *cell in self.cells)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,6 +101,27 @@
     
     [controller doneWithString: self.textView.text Attributed:self.textView.attributedText Attributes:currentAttributes atIndex:self.indexindex];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.cells count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.cells objectAtIndex:indexPath.row];
+}
+
+- (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.cells objectAtIndex:indexPath.row];
+    return cell.bounds.size.height;  // use the height set in IB
 }
 
 - (IBAction)colorChanged:(id)sender {

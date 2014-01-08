@@ -19,14 +19,17 @@
     self.standardUrl = [[[attributes valueForKeyPath:@"images"] valueForKeyPath:@"standard_resolution"] valueForKeyPath:@"url"];
     self.likes = [[[attributes objectForKey:@"likes"] valueForKey:@"count"] integerValue];
     self.media_id = [attributes valueForKey:@"id"];
+    self.username = [[attributes objectForKey:@"user"] valueForKey:@"username"];
+    self.user_id = [[attributes objectForKey:@"user"] valueForKey:@"id"];
+    self.user_avatar = [[attributes objectForKey:@"user"] valueForKey:@"profile_picture" ];
     return self;
 }
 
-+ (void)getPopularMediWithAccessToken:(NSString *)accessToken
-                     block:(void (^)(NSArray *records))block
++ (void)getMediWithPath:(NSString *)path
+            AccessToken:(NSString *)accessToken
+                  block:(void (^)(NSArray *records))block
 {
     NSDictionary* params = [NSDictionary dictionaryWithObject:accessToken forKey:@"access_token"];
-    NSString* path = @"media/popular";
     
     [[ANInstagramClient sharedClient] getPath:path
                              parameters:params
