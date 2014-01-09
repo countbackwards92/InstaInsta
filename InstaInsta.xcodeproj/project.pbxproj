@@ -32,6 +32,9 @@
 		5B91A6381879D9080015130C /* ANThumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A6371879D9080015130C /* ANThumb.m */; };
 		5B91A63C1879E4080015130C /* ANPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B91A63A1879E4080015130C /* ANPhotoViewController.m */; };
 		5B91A63D1879E4080015130C /* ANPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B91A63B1879E4080015130C /* ANPhotoViewController.xib */; };
+		5B9506DE187E7C1700FFCACD /* ANOfflineFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B9506DC187E7C1700FFCACD /* ANOfflineFeedViewController.m */; };
+		5B9506DF187E7C1700FFCACD /* ANOfflineFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B9506DD187E7C1700FFCACD /* ANOfflineFeedViewController.xib */; };
+		5B9506E1187E8E8600FFCACD /* LoadMore.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B9506E0187E8E8600FFCACD /* LoadMore.png */; };
 		5B977430187CD86D00CBCB9B /* ANUserPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B97742E187CD86D00CBCB9B /* ANUserPageViewController.m */; };
 		5B977431187CD86D00CBCB9B /* ANUserPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B97742F187CD86D00CBCB9B /* ANUserPageViewController.xib */; };
 		5B977438187CF3A800CBCB9B /* NSString+MakeAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B977437187CF3A800CBCB9B /* NSString+MakeAttributedString.m */; };
@@ -41,6 +44,7 @@
 		5BA086EE187E4CF900A6D858 /* ANButtonCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA086ED187E4CF900A6D858 /* ANButtonCollectionViewCell.m */; };
 		5BA086F0187E4D1600A6D858 /* ANButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA086EF187E4D1600A6D858 /* ANButtonCollectionViewCell.xib */; };
 		5BA086F3187E621100A6D858 /* ANPhotoData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA086F2187E621100A6D858 /* ANPhotoData.m */; };
+		5BA08743187E6F8D00A6D858 /* ANPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA08742187E6F8D00A6D858 /* ANPhoto.m */; };
 		5BD5299518764F0300874E82 /* UITabBarController+EnableAllDeleteThis.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5299418764F0300874E82 /* UITabBarController+EnableAllDeleteThis.m */; };
 		62E400F8D93B44339451ADF5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BB3B99AEA547BAB2C7FD2F /* libPods.a */; };
 		C36EAFC91876183E0085881C /* ANLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36EAFC71876183E0085881C /* ANLoginViewController.m */; };
@@ -62,7 +66,6 @@
 		C3FA9D13186CA0470044C0CC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA9CF7186CA0470044C0CC /* CoreData.framework */; };
 		C3FA9D1B186CA0470044C0CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3FA9D19186CA0470044C0CC /* InfoPlist.strings */; };
 		C3FA9D1D186CA0470044C0CC /* InstaInstaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FA9D1C186CA0470044C0CC /* InstaInstaTests.m */; };
-		C3FA9D29186CA06D0044C0CC /* ANInstaFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FA9D27186CA06D0044C0CC /* ANInstaFeedViewController.m */; };
 		C3FA9D2A186CA06D0044C0CC /* ANInstaFeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FA9D28186CA06D0044C0CC /* ANInstaFeedViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +122,10 @@
 		5B91A6391879E4080015130C /* ANPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPhotoViewController.h; sourceTree = "<group>"; };
 		5B91A63A1879E4080015130C /* ANPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPhotoViewController.m; sourceTree = "<group>"; };
 		5B91A63B1879E4080015130C /* ANPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANPhotoViewController.xib; sourceTree = "<group>"; };
+		5B9506DB187E7C1700FFCACD /* ANOfflineFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANOfflineFeedViewController.h; sourceTree = "<group>"; };
+		5B9506DC187E7C1700FFCACD /* ANOfflineFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANOfflineFeedViewController.m; sourceTree = "<group>"; };
+		5B9506DD187E7C1700FFCACD /* ANOfflineFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANOfflineFeedViewController.xib; sourceTree = "<group>"; };
+		5B9506E0187E8E8600FFCACD /* LoadMore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadMore.png; sourceTree = "<group>"; };
 		5B97742D187CD86D00CBCB9B /* ANUserPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANUserPageViewController.h; sourceTree = "<group>"; };
 		5B97742E187CD86D00CBCB9B /* ANUserPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANUserPageViewController.m; sourceTree = "<group>"; };
 		5B97742F187CD86D00CBCB9B /* ANUserPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANUserPageViewController.xib; sourceTree = "<group>"; };
@@ -134,6 +141,8 @@
 		5BA086EF187E4D1600A6D858 /* ANButtonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANButtonCollectionViewCell.xib; sourceTree = "<group>"; };
 		5BA086F1187E621100A6D858 /* ANPhotoData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPhotoData.h; sourceTree = "<group>"; };
 		5BA086F2187E621100A6D858 /* ANPhotoData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPhotoData.m; sourceTree = "<group>"; };
+		5BA08741187E6F8D00A6D858 /* ANPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPhoto.h; sourceTree = "<group>"; };
+		5BA08742187E6F8D00A6D858 /* ANPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPhoto.m; sourceTree = "<group>"; };
 		5BD5299318764F0300874E82 /* UITabBarController+EnableAllDeleteThis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+EnableAllDeleteThis.h"; sourceTree = "<group>"; };
 		5BD5299418764F0300874E82 /* UITabBarController+EnableAllDeleteThis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+EnableAllDeleteThis.m"; sourceTree = "<group>"; };
 		969107F5698D4789BE4C0997 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -161,8 +170,6 @@
 		C3FA9D18186CA0470044C0CC /* InstaInstaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "InstaInstaTests-Info.plist"; sourceTree = "<group>"; };
 		C3FA9D1A186CA0470044C0CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3FA9D1C186CA0470044C0CC /* InstaInstaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstaInstaTests.m; sourceTree = "<group>"; };
-		C3FA9D26186CA06D0044C0CC /* ANInstaFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANInstaFeedViewController.h; sourceTree = "<group>"; };
-		C3FA9D27186CA06D0044C0CC /* ANInstaFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANInstaFeedViewController.m; sourceTree = "<group>"; };
 		C3FA9D28186CA06D0044C0CC /* ANInstaFeedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ANInstaFeedViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -276,6 +283,9 @@
 				5B5FC1F1187B03C200320BD9 /* ANPopularDetailViewController.h */,
 				5B5FC1F2187B03C200320BD9 /* ANPopularDetailViewController.m */,
 				5B5FC1F3187B03C200320BD9 /* ANPopularDetailViewController.xib */,
+				5B9506DB187E7C1700FFCACD /* ANOfflineFeedViewController.h */,
+				5B9506DC187E7C1700FFCACD /* ANOfflineFeedViewController.m */,
+				5B9506DD187E7C1700FFCACD /* ANOfflineFeedViewController.xib */,
 				5BA086EC187E4CF900A6D858 /* ANButtonCollectionViewCell.h */,
 				5BA086ED187E4CF900A6D858 /* ANButtonCollectionViewCell.m */,
 				5BA086EF187E4D1600A6D858 /* ANButtonCollectionViewCell.xib */,
@@ -292,8 +302,8 @@
 				C385DEB6186CC9EF00369C5E /* first.png */,
 				C3FA9D02186CA0470044C0CC /* ANAppDelegate.h */,
 				C3FA9D03186CA0470044C0CC /* ANAppDelegate.m */,
-				C3FA9D26186CA06D0044C0CC /* ANInstaFeedViewController.h */,
-				C3FA9D27186CA06D0044C0CC /* ANInstaFeedViewController.m */,
+				5BA08741187E6F8D00A6D858 /* ANPhoto.h */,
+				5BA08742187E6F8D00A6D858 /* ANPhoto.m */,
 				5B977436187CF3A800CBCB9B /* NSString+MakeAttributedString.h */,
 				5B977437187CF3A800CBCB9B /* NSString+MakeAttributedString.m */,
 				5B5FC1D6187AECDA00320BD9 /* Screenshot.png */,
@@ -313,6 +323,7 @@
 				C36EAFCC18763AD60085881C /* ANModel.h */,
 				C36EAFCD18763AD60085881C /* ANModel.m */,
 				C36EAFC81876183E0085881C /* ANLoginViewController.xib */,
+				5B9506E0187E8E8600FFCACD /* LoadMore.png */,
 				C3FA9D28186CA06D0044C0CC /* ANInstaFeedViewController.xib */,
 				C3FA9D08186CA0470044C0CC /* Images.xcassets */,
 				C3FA9D05186CA0470044C0CC /* InstaInsta.xcdatamodeld */,
@@ -441,9 +452,11 @@
 				5B97743D187CFF5C00CBCB9B /* ANTagSearchViewController.xib in Resources */,
 				5B5FC1ED187AF71B00320BD9 /* ANPopularViewController.xib in Resources */,
 				5B8DB785187E155D00677F17 /* ANUserListViewController.xib in Resources */,
+				5B9506DF187E7C1700FFCACD /* ANOfflineFeedViewController.xib in Resources */,
 				5B8DB78A187E2EAC00677F17 /* ANUserListCell.xib in Resources */,
 				C3FA9D2A186CA06D0044C0CC /* ANInstaFeedViewController.xib in Resources */,
 				5BA086F0187E4D1600A6D858 /* ANButtonCollectionViewCell.xib in Resources */,
+				5B9506E1187E8E8600FFCACD /* LoadMore.png in Resources */,
 				5B5FC1D7187AECDA00320BD9 /* Screenshot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +516,7 @@
 				5B8DB784187E155D00677F17 /* ANUserListViewController.m in Sources */,
 				5B5FC1E8187AF41800320BD9 /* ANPopularMedia.m in Sources */,
 				5B91A6351879D9080015130C /* ANLowRes.m in Sources */,
+				5B9506DE187E7C1700FFCACD /* ANOfflineFeedViewController.m in Sources */,
 				5B977438187CF3A800CBCB9B /* NSString+MakeAttributedString.m in Sources */,
 				5B91A63C1879E4080015130C /* ANPhotoViewController.m in Sources */,
 				5B91A62F1879D9080015130C /* ANStandRes.m in Sources */,
@@ -521,10 +535,10 @@
 				C3FA9D07186CA0470044C0CC /* InstaInsta.xcdatamodeld in Sources */,
 				5B97743C187CFF5C00CBCB9B /* ANTagSearchViewController.m in Sources */,
 				C36EAFCE18763AD60085881C /* ANModel.m in Sources */,
+				5BA08743187E6F8D00A6D858 /* ANPhoto.m in Sources */,
 				5B01A9CB187A405F0059529C /* ANTableViewController.m in Sources */,
 				5B5FC1F4187B03C200320BD9 /* ANPopularDetailViewController.m in Sources */,
 				5BA086F3187E621100A6D858 /* ANPhotoData.m in Sources */,
-				C3FA9D29186CA06D0044C0CC /* ANInstaFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

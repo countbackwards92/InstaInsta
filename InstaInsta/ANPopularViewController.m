@@ -126,7 +126,7 @@
     if (indexPath.row < [self.popularPhotos count]) {
         imageView.image = [self.popularPhotos objectAtIndex:indexPath.row];
     } else {
-        imageView.image = [UIImage imageNamed:@"Screenshot.png"];
+        imageView.image = [UIImage imageNamed:@"LoadMore.png"];
     }
     
     return cell;

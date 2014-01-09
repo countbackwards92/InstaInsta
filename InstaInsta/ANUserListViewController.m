@@ -90,7 +90,7 @@
         });
     } else {
         [cell.cellitemLabel setText:@"Load more"];
-        [cell.cellitemImageView setImage:[UIImage imageNamed:@"Screenshot.png"]];
+        [cell.cellitemImageView setImage:[UIImage imageNamed:@"LoadMore.png"]];
     }
     return cell;
 }

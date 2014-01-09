@@ -14,6 +14,7 @@
 #import "ANPopularViewController.h"
 #import "ANPopularMedia.h"
 #import "ANPhotoData.h"
+#import "ANAppDelegate.h"
 
 @interface ANPopularDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -25,14 +26,17 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *photoCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *userCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *likesCell;
-@property (strong, nonatomic) IBOutlet UITableViewCell *addcaptionCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *saveofflineCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *tagsCell;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *tagsCollectionView;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *usernameButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveOfflineButton;
 @property (strong, nonatomic) NSArray *cells;
+
+@property (strong, nonatomic) NSManagedObjectContext *context;
 @end
 
 @implementation ANPopularDetailViewController
@@ -46,6 +50,46 @@
       //  self.tags = @[@"lol", @"lmao"];
     }
     return self;
+}
+- (IBAction)saveOffline:(id)sender {
+    if (!self.offline_mode) {
+        NSEntityDescription *entityDest = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.context];
+        
+        NSManagedObject *newPhoto = [[NSManagedObject alloc] initWithEntity:entityDest insertIntoManagedObjectContext:self.context];
+      //  [newPhoto setValue:self.incomingLikeCount forKey:@"likes_count"];
+        [newPhoto setValue:self.media_id forKey:@"media_id"];
+        [newPhoto setValue:self.username forKey:@"username"];
+        [newPhoto setValue:UIImagePNGRepresentation(self.avatarLabel.image) forKey:@"avatar_photo"];
+        [newPhoto setValue:UIImagePNGRepresentation(self.imageView.image) forKey:@"photo"];
+        [newPhoto setValue:[NSString stringWithFormat:@"%lu",(unsigned long)self.incomingLikeCount] forKey:@"likes_count"];
+        
+        NSError *error;
+        [self.context save:&error];
+        if (!error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"InstaInsta" message:@"Photo page saved" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alertView show];
+        }
+    } else {
+        NSEntityDescription *entityDest = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.context];
+        
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        [fetchRequest setEntity:entityDest];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"media_id == %@",self.media_id];
+        [fetchRequest setPredicate:predicate];
+        
+        NSError *error;
+        
+        NSArray *matchingData = [self.context executeFetchRequest:fetchRequest error:&error];
+        if (!error) {
+            for (NSManagedObject *obj in matchingData) {
+                [self.context deleteObject:obj];
+            }
+            [self.context save:&error];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
+    
 }
 
 - (IBAction)touchAndLike:(id)sender {
@@ -85,33 +129,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.saveOfflineButton setEnabled:NO];
     [self.activityIndicator setHidden:NO];
     [self.activityIndicator startAnimating];
 
     [self.usernameButton setTitle:self.username forState:UIControlStateNormal];
     
-    self.cells = [NSArray arrayWithObjects:self.userCell, self.photoCell, self.tagsCell, self.likesCell, nil];
+    self.cells = [NSArray arrayWithObjects:self.userCell, self.photoCell, self.tagsCell, self.likesCell, self.saveofflineCell, nil];
     for (UITableViewCell *cell in self.cells)
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if (self.user_avatar_image)
         [self.avatarLabel setImage:self.user_avatar_image];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        UIImage *avatarImage;
-        if (!self.user_avatar_image)
-            avatarImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.user_avatar]]];
-        self.initialImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrl]]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            [self.activityIndicator setHidden:YES];
-            [self.activityIndicator stopAnimating];
-            [self.imageView setImage:self.initialImage];
+    if (!self.offline_mode) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+            UIImage *avatarImage;
             if (!self.user_avatar_image)
-                [self.avatarLabel setImage:avatarImage];
+                avatarImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.user_avatar]]];
+            self.initialImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrl]]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [self.activityIndicator setHidden:YES];
+                [self.activityIndicator stopAnimating];
+                [self.imageView setImage:self.initialImage];
+                [self.saveOfflineButton setEnabled:YES];
+                if (!self.user_avatar_image)
+                    [self.avatarLabel setImage:avatarImage];
+            });
         });
-    });
-    
+    } else {
+        [self.imageView setImage:self.preloaded_image];
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        [self.saveOfflineButton setEnabled:YES];
+        [self.saveOfflineButton setTitle:@"Delete from offline storage" forState:UIControlStateNormal];
+    }
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Add caption" style:UIBarButtonItemStyleBordered target:self action:@selector(addTextTap:)]];
     [self.tagsCollectionView setBackgroundColor:[UIColor whiteColor]];
     [self.tagsCollectionView registerNib:[UINib nibWithNibName:@"ANButtonCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"CellButton"];
@@ -119,6 +171,7 @@
     
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString *access_token = [defaults valueForKey:@"AccessTokenKey"];
+    if (!self.offline_mode) {
     [ANPhotoData getPhotoDataByMediaId:self.media_id AccessToken:access_token block:^(NSArray *records) {
         ANPhotoData *data = [records objectAtIndex:0];
         self.user_has_liked = data.user_has_liked;
@@ -134,6 +187,16 @@
             self.likesLabel.text = [[NSString stringWithFormat:@"%lu",(unsigned long)self.incomingLikeCount] stringByAppendingString:@" like"];
 
     }];
+    } else {
+        if (self.incomingLikeCount != 1)
+            self.likesLabel.text = [[NSString stringWithFormat:@"%lu",(unsigned long)self.incomingLikeCount] stringByAppendingString:@" likes"];
+        else
+            self.likesLabel.text = [[NSString stringWithFormat:@"%lu",(unsigned long)self.incomingLikeCount] stringByAppendingString:@" like"];
+        [self.likesButton setHidden:YES];
+    }
+    ANAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.context = [appDelegate managedObjectContext];
+    
   //  UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
   //  [flowLayout setItemSize:CGSizeMake(100, 30)];
   //  [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];

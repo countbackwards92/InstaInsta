@@ -76,7 +76,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="379"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-W5-j3e">
+                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0Lo-W5-j3e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="379"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SAo-w9-id2">
@@ -92,6 +92,12 @@
                         </connections>
                     </collectionView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="0Lo-W5-j3e" secondAttribute="trailing" id="Mv1-uy-yGr"/>
+                    <constraint firstItem="0Lo-W5-j3e" firstAttribute="leading" secondItem="FlX-oy-kbO" secondAttribute="leading" id="P3I-i5-TGB"/>
+                    <constraint firstItem="0Lo-W5-j3e" firstAttribute="top" secondItem="FlX-oy-kbO" secondAttribute="top" id="Uhe-ef-Jrq"/>
+                    <constraint firstAttribute="bottom" secondItem="0Lo-W5-j3e" secondAttribute="bottom" id="VIb-ew-5tv"/>
+                </constraints>
             </tableViewCellContentView>
         </tableViewCell>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="33" id="mwF-IU-NoQ">

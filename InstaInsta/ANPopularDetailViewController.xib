@@ -7,13 +7,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ANPopularDetailViewController">
             <connections>
                 <outlet property="activityIndicator" destination="jdp-rh-1zy" id="uJZ-fr-cjK"/>
-                <outlet property="addcaptionCell" destination="zqo-0T-HUX" id="Qyk-eg-R6z"/>
                 <outlet property="avatarLabel" destination="v6b-fY-XMb" id="ITN-oK-H1x"/>
                 <outlet property="imageView" destination="pB8-4s-Gkn" id="UR1-x3-1V1"/>
                 <outlet property="likesButton" destination="XgZ-Af-9eQ" id="mjZ-nf-Lnh"/>
                 <outlet property="likesCell" destination="R59-ZH-SVf" id="z90-9E-eZQ"/>
                 <outlet property="likesLabel" destination="Ptw-gx-U5V" id="VkW-73-Zzt"/>
                 <outlet property="photoCell" destination="gQZ-7S-t2P" id="mcd-3f-TpK"/>
+                <outlet property="saveOfflineButton" destination="MyO-Te-iMy" id="5TD-ge-YU8"/>
+                <outlet property="saveofflineCell" destination="zqo-0T-HUX" id="BzB-TY-tTj"/>
                 <outlet property="tagsCell" destination="23W-od-HJc" id="Oxl-I0-fTJ"/>
                 <outlet property="tagsCollectionView" destination="pgQ-cV-JOw" id="R97-F8-Ux9"/>
                 <outlet property="userCell" destination="eTH-CR-Zl9" id="mjv-8Y-HS3"/>
@@ -156,13 +157,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MyO-Te-iMy">
-                        <rect key="frame" x="118" y="7" width="84" height="30"/>
+                        <rect key="frame" x="80" y="7" width="161" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Add caption">
+                        <state key="normal" title="Save for Offline storage">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="addTextTap:" destination="-1" eventType="touchUpInside" id="eKs-3v-PYq"/>
+                            <action selector="saveOffline:" destination="-1" eventType="touchUpInside" id="3IG-mz-XCz"/>
                         </connections>
                     </button>
                 </subviews>

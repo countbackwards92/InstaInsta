@@ -21,6 +21,9 @@
 @property (strong, nonatomic) NSArray *tags;
 @property (nonatomic) BOOL user_has_liked;
 
+@property (nonatomic) BOOL offline_mode;
+
 @property (strong, nonatomic) UIImage *user_avatar_image;
+@property (strong, nonatomic) UIImage *preloaded_image;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ANPhotoViewController.h"
-#import <RestKit.h>
+
 #import "ANTableViewController.h"
 #import "NSString+MakeAttributedString.h"
 

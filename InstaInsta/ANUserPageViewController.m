@@ -175,7 +175,7 @@
     if (indexPath.row < self.user_photos.count) {
         imageView.image = [self.user_photos objectAtIndex:indexPath.row];
     } else {
-        imageView.image = [UIImage imageNamed:@"Screenshot.png"];
+        imageView.image = [UIImage imageNamed:@"LoadMore.png"];
     }
     
     return cell;
