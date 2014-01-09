@@ -95,7 +95,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)doneEditing:(id)sender {
-    id controller = self.navigationController.viewControllers[2];
+    id controller = self.navigationController.viewControllers[self.navigationController.viewControllers.count - 2];
     
     NSDictionary *currentAttributes = @{@"Bold": [NSNumber numberWithBool:self.isBold.isOn], @"Italic": [NSNumber numberWithBool:self.isItalic.isOn], @"Size": [NSNumber numberWithFloat:self.sizeSlider.value], @"Color": [NSNumber numberWithFloat:self.colorSlider.value]};
     

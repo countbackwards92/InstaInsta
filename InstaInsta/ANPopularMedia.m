@@ -38,6 +38,7 @@
                                     NSArray* data = [responseObject objectForKey:@"data"];
                                     for (NSDictionary* obj in data) {
                                         ANPopularMedia* media = [[ANPopularMedia alloc] initWithAttributes:obj];
+                                        media.next_url = [[responseObject objectForKey:@"pagination"] valueForKey:@"next_url"];
                                         [mutableRecords addObject:media];
                                     }
                                     if (block) {
@@ -50,6 +51,33 @@
                                         block([NSArray array]);
                                     }
                                 }];
+}
+
++ (void)getMediaWithExactPath:(NSString *)path
+                  block:(void (^)(NSArray *records))block
+{
+    //NSDictionary* params = [NSDictionary dictionaryWithObject:accessToken forKey:@"access_token"];
+    
+    [[ANInstagramClient sharedClient] getPath:path
+                                   parameters:nil
+                                      success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                          NSMutableArray *mutableRecords = [NSMutableArray array];
+                                          NSArray* data = [responseObject objectForKey:@"data"];
+                                          for (NSDictionary* obj in data) {
+                                              ANPopularMedia* media = [[ANPopularMedia alloc] initWithAttributes:obj];
+                                              media.next_url = [[responseObject objectForKey:@"pagination"] valueForKey:@"next_url"];
+                                              [mutableRecords addObject:media];
+                                          }
+                                          if (block) {
+                                              block([NSArray arrayWithArray:mutableRecords]);
+                                          }
+                                      }
+                                      failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                          NSLog(@"error: %@", error.localizedDescription);
+                                          if (block) {
+                                              block([NSArray array]);
+                                          }
+                                      }];
 }
 
 @end

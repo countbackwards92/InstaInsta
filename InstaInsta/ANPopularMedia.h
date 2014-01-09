@@ -17,12 +17,16 @@
 @property (nonatomic, strong) NSString *user_id;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *user_avatar;
+@property (nonatomic, strong) NSString *next_url;
 @property (nonatomic) NSUInteger likes;
 
 @property (nonatomic, strong) NSString *load_more_url;
 
 + (void)getMediWithPath:(NSString *)path
             AccessToken:(NSString *)accessToken
+                  block:(void (^)(NSArray *records))block;
+
++ (void)getMediaWithExactPath:(NSString *)path
                   block:(void (^)(NSArray *records))block;
 
 

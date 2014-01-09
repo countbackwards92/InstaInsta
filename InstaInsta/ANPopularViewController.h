@@ -10,5 +10,6 @@
 
 @interface ANPopularViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (strong, nonatomic) NSString *mediapath;
 
 @end

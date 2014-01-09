@@ -9,9 +9,11 @@
 #import "ANPhotoViewController.h"
 #import <RestKit.h>
 #import "ANTableViewController.h"
+#import "NSString+MakeAttributedString.h"
+
 @interface ANPhotoViewController ()
 
-@property (strong, nonatomic) UIImage *initialImage;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) IBOutlet UITableViewCell *imageCell;
@@ -70,7 +72,14 @@
     // Do any additional setup after loading the view from its nib.
   //  self.linkField.text = self.URLString;
    // [self.imageView setImageWithURL:[NSURL URLWithString:self.URLString] placeholderImage:nil];
-
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.items = [[defaults objectForKey:@"Items"] mutableCopy];
+    self.attrib = [[defaults objectForKey:@"Attributes"] mutableCopy];
+    self.attr_items = [[NSMutableArray alloc] init];
+    
+    for (NSUInteger i = 0; i < [self.items count]; ++i) {
+        [self.attr_items addObject:[NSString createStringFromString:[self.items objectAtIndex:i] WithAttributes:[self.attrib objectAtIndex:i]]];
+    }
 
     [self.navigationItem setTitle:@"Photo"];
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"Edit text" style:UIBarButtonItemStyleBordered target:self action:@selector(editAction:)] animated:YES];
@@ -84,6 +93,7 @@
     for (UITableViewCell *cell in self.cells)
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    if (!self.initialImage) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         
         self.initialImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.URLString]]];
@@ -95,6 +105,12 @@
             self.saveButton.enabled = YES;
         });
     });
+    } else {
+        [self.activityIndicator setHidden:YES];
+        [self.activityIndicator stopAnimating];
+        [self updateText];
+        self.saveButton.enabled = YES;
+    }
     
 }
 
@@ -172,6 +188,7 @@
 - (IBAction)editAction:(id)sender
 {
     ANTableViewController *tableview = [[ANTableViewController alloc]initWithNibName:@"ANTableViewController" bundle:nil];
+    tableview.needsToLoadData = NO;
     tableview.items = self.items;
     tableview.attr_items = self.attr_items;
     tableview.attrib = self.attrib;

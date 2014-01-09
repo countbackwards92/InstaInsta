@@ -7,9 +7,12 @@
 //
 #import <RestKit/RestKit.h>
 #import "ANAppDelegate.h"
-#import "ANInstaFeedViewController.h"
+#import "ANUserPageViewController.h"
 #import "ANLoginViewController.h"
 #import "ANPopularViewController.h"
+#import "NSString+MakeAttributedString.h"
+#import "ANTagSearchViewController.h"
+
 @implementation ANAppDelegate
 
 
@@ -78,34 +81,44 @@
     
     ////NOW
     
-    
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
     UITabBarController *tabController = [[UITabBarController alloc] init];
     
-    ANLoginViewController *viewController = [[ANLoginViewController alloc] initWithNibName:@"ANLoginViewController" bundle:nil];
-    ANInstaFeedViewController *feedViewController = [[ANInstaFeedViewController alloc]initWithNibName:@"ANInstaFeedViewController" bundle:nil];
+    ANLoginViewController *loginViewController = [[ANLoginViewController alloc] initWithNibName:@"ANLoginViewController" bundle:nil];
+    
+    ANUserPageViewController *feedViewController = [[ANUserPageViewController alloc]initWithNibName:@"ANUserPageViewController" bundle:nil];
     ANPopularViewController *popViewController = [[ANPopularViewController alloc]initWithNibName:@"ANPopularViewController" bundle:nil];
-
+    ANTagSearchViewController *tagSearchController = [[ANTagSearchViewController alloc]initWithNibName:@"ANTagSearchViewController" bundle:nil];
+    
     UINavigationController *feedNavViewController = [[UINavigationController alloc] initWithRootViewController:feedViewController];
     UINavigationController *popularNavController = [[UINavigationController alloc] initWithRootViewController:popViewController];
+    UINavigationController *tagNavController = [[UINavigationController alloc] initWithRootViewController:tagSearchController];
     
+    feedViewController.hide_bar = YES;
+    popViewController.mediapath = @"media/popular";
+    
+    tagSearchController.navigationItem.title = @"Tag search";
     popViewController.navigationItem.title = @"Popular feed";
     
     popularNavController.tabBarItem.title = @"Popular photos";
     popularNavController.navigationBar.translucent = NO;
     feedNavViewController.tabBarItem.title = @"User Feed";
     feedNavViewController.navigationBar.translucent = NO;
+    tagNavController.tabBarItem.title = @"Tag search";
+    tagNavController.navigationBar.translucent = NO;
     
-    [tabController addChildViewController:viewController];
+    feedViewController.user_id = @"self";
+    
+    [tabController addChildViewController:loginViewController];
     [tabController addChildViewController:feedNavViewController];
     [tabController addChildViewController:popularNavController];
+    [tabController addChildViewController:tagNavController];
     
-    tabController.tabBar.translucent = NO;
+    tabController.tabBar.translucent = YES;
     
-    feedViewController.managedObjectContext = managedObjectStore.mainQueueManagedObjectContext;
+  //  feedViewController.managedObjectContext = managedObjectStore.mainQueueManagedObjectContext;
     
     self.window.rootViewController = tabController;
     self.window.backgroundColor = [UIColor whiteColor];

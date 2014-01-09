@@ -19,4 +19,6 @@
 @property (strong, nonatomic) NSString *user_id;
 @property (strong, nonatomic) NSString *user_avatar;
 
+@property (strong, nonatomic) UIImage *user_avatar_image;
+
 @end

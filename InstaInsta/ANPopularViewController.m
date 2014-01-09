@@ -69,7 +69,7 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     NSString *access_token = [defaults valueForKey:@"AccessTokenKey"];
 
-    [ANPopularMedia getMediWithPath:@"media/popular" AccessToken:access_token block:^(NSArray *records) {
+    [ANPopularMedia getMediWithPath:self.mediapath AccessToken:access_token block:^(NSArray *records) {
         for (ANPopularMedia* media in records) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
                 NSString* thumbnailUrl = media.thumbnailUrl;

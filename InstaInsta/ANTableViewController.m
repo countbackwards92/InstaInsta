@@ -8,6 +8,7 @@
 
 #import "ANTableViewController.h"
 #import "ANTableCellEditController.h"
+#import "NSString+MakeAttributedString.h"
 
 @interface ANTableViewController ()
 
@@ -91,6 +92,16 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    if (self.needsToLoadData) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.items = [[defaults objectForKey:@"Items"] mutableCopy];
+        self.attrib = [[defaults objectForKey:@"Attributes"] mutableCopy];
+        self.attr_items = [[NSMutableArray alloc] init];
+    
+        for (NSUInteger i = 0; i < [self.items count]; ++i) {
+            [self.attr_items addObject:[NSString createStringFromString:[self.items objectAtIndex:i] WithAttributes:[self   .attrib objectAtIndex:i]]];
+        }
+    }
     // Do any additional setup after loading the view from its nib.
 }
 

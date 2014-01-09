@@ -9,6 +9,7 @@
 #import "ANPopularDetailViewController.h"
 #import "ANInstagramClient.h"
 #import "ANUserPageViewController.h"
+#import "ANPhotoViewController.h"
 
 @interface ANPopularDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
@@ -20,9 +21,9 @@
 @property (strong, nonatomic) IBOutlet UITableViewCell *photoCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *userCell;
 @property (strong, nonatomic) IBOutlet UITableViewCell *likesCell;
+@property (strong, nonatomic) IBOutlet UITableViewCell *addcaptionCell;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarLabel;
-
 
 @property (weak, nonatomic) IBOutlet UIButton *usernameButton;
 @property (strong, nonatomic) NSArray *cells;
@@ -41,6 +42,12 @@
 
 - (IBAction)touchAndLike:(id)sender {
     
+}
+
+- (IBAction)addTextTap:(id)sender {
+    ANPhotoViewController *photoEditController = [[ANPhotoViewController alloc] initWithNibName:@"ANPhotoViewController" bundle:nil];
+    photoEditController.initialImage = self.imageView.image;
+    [self.navigationController pushViewController:photoEditController animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -68,25 +75,28 @@
     [super viewDidLoad];
     [self.activityIndicator setHidden:NO];
     [self.activityIndicator startAnimating];
-    self.likesLabel.enabled = NO;
-    self.likesButton.enabled = NO;
+    self.likesLabel.text = [[NSString stringWithFormat:@"%lu",(unsigned long)self.incomingLikeCount] stringByAppendingString:@" likes"];
+    [self.usernameButton setTitle:self.username forState:UIControlStateNormal];
     
-    self.cells = [NSArray arrayWithObjects:self.userCell, self.photoCell, self.likesCell, nil];
+    self.cells = [NSArray arrayWithObjects:self.userCell, self.photoCell, self.likesCell, self.addcaptionCell, nil];
     for (UITableViewCell *cell in self.cells)
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self.usernameButton setTitle:self.username forState:UIControlStateNormal];
+    
+    if (self.user_avatar_image)
+        [self.avatarLabel setImage:self.user_avatar_image];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        
-        UIImage *avatarImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.user_avatar]]];
+        UIImage *avatarImage;
+        if (!self.user_avatar_image)
+            avatarImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: self.user_avatar]]];
         self.initialImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.imageUrl]]];
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self.activityIndicator setHidden:YES];
             [self.activityIndicator stopAnimating];
-            [self showLikes];
-            [self.avatarLabel setImage:avatarImage];
-            self.likesButton.enabled = YES;
-            self.likesLabel.enabled = YES;
+            [self.imageView setImage:self.initialImage];
+            if (!self.user_avatar_image)
+                [self.avatarLabel setImage:avatarImage];
         });
     });
     // Do any additional setup after loading the view from its nib.
@@ -115,11 +125,6 @@
      
 }
 
-- (void) showLikes
-{
-    [self.imageView setImage:self.initialImage];
-    self.likesLabel.text = [[NSString stringWithFormat:@"%lu",(unsigned long)self.incomingLikeCount] stringByAppendingString:@" likes"];
-}
 
 - (void)didReceiveMemoryWarning
 {

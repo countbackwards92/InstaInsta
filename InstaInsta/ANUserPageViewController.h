@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ANUserPageViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) NSString *user_id;
-
+@property BOOL hide_bar;
 
 @end

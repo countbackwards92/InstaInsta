@@ -11,6 +11,8 @@
 @interface ANTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property BOOL needsToLoadData;
+
 @property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic) NSMutableArray *attr_items;
 @property (strong, nonatomic) NSMutableArray *attrib;
