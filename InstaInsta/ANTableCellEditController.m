@@ -58,9 +58,9 @@
     [self.textView setText:self.initialString];
     self.navigationController.navigationBar.translucent = NO;
     if (self.indexindex == -1) {
-        self.navigationItem.title = @"Add Item";
+        self.navigationItem.title = @"Add line";
     } else {
-        self.navigationItem.title = [NSString stringWithFormat:@"Edit row #%d", self.indexindex + 1];
+        self.navigationItem.title = [NSString stringWithFormat:@"Edit line #%d", self.indexindex + 1];
     }
     self.colorSlider.value = self.initColor;
     self.sizeSlider.value = self.initFontSize;

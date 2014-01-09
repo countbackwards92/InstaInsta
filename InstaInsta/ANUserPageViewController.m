@@ -107,20 +107,25 @@
     [self.activityIndicator startAnimating];
     
     [ANPopularMedia getMediWithPath:[NSString stringWithFormat:@"users/%@/media/recent",self.user_id] AccessToken:access_token block:^(NSArray *records) {
+
+        NSUInteger initialCount = [self.user_photos count];
+        NSUInteger photoNumber = initialCount;
+        
+        UIImage *blank = [UIImage imageNamed:@"Screenshot.png"];
+        for (NSUInteger i = 0; i < [records count]; i++) {
+            [self.user_photos addObject:blank];
+            [self.user_avatars addObject:blank];
+            [self.media_ids addObject:((ANPopularMedia*)records[i]).media_id];
+        }
         if (!self.images)
             self.images = [records copy];
         else
             self.images = [self.images arrayByAddingObjectsFromArray:[records copy]];
         
-        NSUInteger initialCount = [self.user_photos count];
-        NSUInteger photoNumber = initialCount;
+
         
         for (ANPopularMedia* media in records) {
-            if ([self.media_ids indexOfObject:media.media_id] == NSNotFound) {
-                UIImage *blank = [UIImage imageNamed:@"Screenshot.png"];
-                [self.user_photos addObject:blank];
-                [self.user_avatars addObject:blank];
-                [self.media_ids addObject:media.media_id];
+
                 
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
                     NSString *thumbnailUrl = media.thumbnailUrl;
@@ -142,7 +147,7 @@
                     
                 });
                 photoNumber = photoNumber + 1;
-            }
+            
         }
     }];
 }
@@ -187,6 +192,8 @@
         detailViewController.user_avatar_image = [self.user_avatars objectAtIndex:indexPath.row];
         detailViewController.user_id = ((ANPopularMedia *)[self.images objectAtIndex:indexPath.row]).user_id;
         detailViewController.username = ((ANPopularMedia *)[self.images objectAtIndex:indexPath.row]).username;
+        detailViewController.tags = ((ANPopularMedia *)[self.images objectAtIndex:indexPath.row]).tags;
+        detailViewController.user_has_liked = ((ANPopularMedia *)[self.images objectAtIndex:indexPath.row]).user_has_liked;
         [self.navigationController pushViewController:detailViewController animated:YES];
     } else {
         [ANPopularMedia getMediaWithExactPath:((ANPopularMedia *)[self.images objectAtIndex:([self.images count] - 1)]).next_url block:^(NSArray *records) {
@@ -275,5 +282,7 @@
         [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
 }
+
+
 
 @end

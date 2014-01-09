@@ -68,7 +68,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
     }
-    cell.textLabel.text = temp.name;
+    cell.textLabel.text = [@"#" stringByAppendingString:temp.name];
     return cell;
 }
 
@@ -93,7 +93,24 @@
     ANPopularViewController *popController = [[ANPopularViewController alloc] initWithNibName:@"ANPopularViewController" bundle:nil];
     ANTagSearch *temp = [self.searchResults objectAtIndex:indexPath.row];
     popController.mediapath = [NSString stringWithFormat:@"tags/%@/media/recent",temp.name];
+    popController.navigationItem.title = [[@"#" stringByAppendingString:temp.name] uppercaseString];
     [self.navigationController pushViewController:popController animated:YES];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)aSearchBar {
+    [aSearchBar resignFirstResponder];
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.searchBar resignFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    [self.searchBar resignFirstResponder];
+    
 }
 
 @end

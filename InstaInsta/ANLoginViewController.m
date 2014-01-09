@@ -7,10 +7,12 @@
 //
 
 #import "ANLoginViewController.h"
+#import "ANAppDelegate.h"
 
 @interface ANLoginViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (nonatomic) BOOL OK;
 
 @end
 
@@ -61,12 +63,18 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         NSString* params = [[request.URL.absoluteString componentsSeparatedByString:@"#"] objectAtIndex:1];
         self.accessToken = [params stringByReplacingOccurrencesOfString:@"access_token=" withString:@""];
 
-        [self.tabBarController enableAllDeleteCurrent];
-        
+        //[self.tabBarController enableAllDeleteCurrent];
         NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:self.accessToken forKey:@"AccessTokenKey"];
         [defaults synchronize];
-
+        [UIView transitionWithView:self.view.window.rootViewController.view
+                          duration:0.5
+                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                        animations:^{
+                            self.view.window.rootViewController = ApplicationDelegate.coolController;
+                        }
+                        completion:nil];
+        self.OK = YES;
     }
     
 	return YES;
@@ -74,17 +82,24 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-
+    if (!self.OK) {
      NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
      NSObject *hereweare = [defaults objectForKey:@"AccessTokenKey"];
      if (!hereweare) {
-     UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No internet connection - no offline data stored" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-     [offlinealert show];
+         UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No internet connection - no offline data stored" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+         [offlinealert show];
      } else {
-     UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No internet connection - running in offline mode" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-     [offlinealert show];
-     [self.tabBarController enableAllDeleteCurrent];
+         UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+         [offlinealert show];
+         [UIView transitionWithView:self.view.window.rootViewController.view
+                               duration:0.5
+                                options:UIViewAnimationOptionTransitionFlipFromLeft
+                             animations:^{
+                                 self.view.window.rootViewController = ApplicationDelegate.coolController;
+                             }
+                             completion:nil];
      }
+    }
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView

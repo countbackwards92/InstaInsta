@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ANTagSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+@interface ANTagSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate>
 
 @end

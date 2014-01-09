@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="48t-vp-I4K" userLabel="Custom cell" customClass="ANUserListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="48t-vp-I4K" id="pqc-FV-4zx">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8IM-u0-FaM">
+                        <rect key="frame" x="20" y="5" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="k1b-Lo-Lkl"/>
+                            <constraint firstAttribute="width" constant="40" id="qkQ-Hv-Con"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zho-lP-sTb">
+                        <rect key="frame" x="68" y="16" width="232" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerY" secondItem="8IM-u0-FaM" secondAttribute="centerY" id="75D-zs-6FB"/>
+                    <constraint firstItem="zho-lP-sTb" firstAttribute="centerY" secondItem="8IM-u0-FaM" secondAttribute="centerY" id="ANe-YN-dtd"/>
+                    <constraint firstItem="8IM-u0-FaM" firstAttribute="leading" secondItem="pqc-FV-4zx" secondAttribute="leading" constant="20" symbolic="YES" id="I8p-mz-MY7"/>
+                    <constraint firstAttribute="trailing" secondItem="zho-lP-sTb" secondAttribute="trailing" constant="20" symbolic="YES" id="Nf5-Qm-Q7R"/>
+                    <constraint firstItem="zho-lP-sTb" firstAttribute="leading" secondItem="8IM-u0-FaM" secondAttribute="trailing" constant="8" symbolic="YES" id="a9I-n5-RpX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellitemImageView" destination="8IM-u0-FaM" id="29r-X3-KoD"/>
+                <outlet property="cellitemLabel" destination="zho-lP-sTb" id="lBa-BL-J2O"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

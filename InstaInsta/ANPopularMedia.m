@@ -22,6 +22,8 @@
     self.username = [[attributes objectForKey:@"user"] valueForKey:@"username"];
     self.user_id = [[attributes objectForKey:@"user"] valueForKey:@"id"];
     self.user_avatar = [[attributes objectForKey:@"user"] valueForKey:@"profile_picture" ];
+    self.tags = [attributes objectForKey:@"tags"];
+    self.user_has_liked = [[attributes valueForKey:@"user_has_liked"] boolValue];
     return self;
 }
 

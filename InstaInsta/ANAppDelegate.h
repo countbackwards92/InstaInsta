@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#define ApplicationDelegate ((ANAppDelegate *)[UIApplication sharedApplication].delegate)
 
 @interface ANAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UITabBarController *coolController;
 
 @end

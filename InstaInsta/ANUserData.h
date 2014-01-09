@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *website;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *user_id;
+@property (strong, nonatomic) NSString *profile_picture;
 @property (nonatomic) NSUInteger media_count;
 @property (nonatomic) NSUInteger follows_count;
 @property (nonatomic) NSUInteger followedby_count;

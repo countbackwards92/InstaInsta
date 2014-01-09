@@ -8,6 +8,8 @@
 
 #import "ANUserListViewController.h"
 #import "ANUserPageViewController.h"
+#import "ANUserListCell.h"
+
 @interface ANUserListViewController ()
 
 @property (strong, nonatomic) NSArray *userList;
@@ -31,6 +33,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self loadUserList];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ANUserListCell" bundle:nil] forCellReuseIdentifier:@"CustomCellReuseID"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,19 +69,28 @@
 {
 
     
-    static NSString *CellIdentifier = @"UserListCell";
-    UITableViewCell *cell;
+    static NSString *CellIdentifier = @"CustomCellReuseID";
+    ANUserListCell *cell;
     
     cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[ANUserListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
     }
     if (indexPath.row < [self.userList count]) {
         ANUserData *temp = [self.userList objectAtIndex:indexPath.row];
-        cell.textLabel.text = temp.username;
+        [cell.cellitemLabel setText:temp.username];
+        [cell.cellitemImageView setImage:[UIImage imageNamed:@"Screenshot.png"]];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((ANUserData *)[self.userList objectAtIndex:indexPath.row]).profile_picture]]];
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                [cell.cellitemImageView setImage:image];
+            });
+            
+        });
     } else {
-        cell.textLabel.text = @"Load more";
+        [cell.cellitemLabel setText:@"Load more"];
+        [cell.cellitemImageView setImage:[UIImage imageNamed:@"Screenshot.png"]];
     }
     return cell;
 }

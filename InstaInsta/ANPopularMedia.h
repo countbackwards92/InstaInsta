@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *user_avatar;
 @property (nonatomic, strong) NSString *next_url;
+@property (nonatomic, strong) NSArray *tags;
+@property (nonatomic) BOOL user_has_liked;
 @property (nonatomic) NSUInteger likes;
 
 @property (nonatomic, strong) NSString *load_more_url;

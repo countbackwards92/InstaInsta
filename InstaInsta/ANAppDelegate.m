@@ -111,16 +111,18 @@
     
     feedViewController.user_id = @"self";
     
-    [tabController addChildViewController:loginViewController];
+  //  [tabController addChildViewController:loginViewController];
     [tabController addChildViewController:feedNavViewController];
     [tabController addChildViewController:popularNavController];
     [tabController addChildViewController:tagNavController];
     
-    tabController.tabBar.translucent = YES;
+    tabController.tabBar.translucent = NO;
+    
+    self.coolController = tabController;
     
   //  feedViewController.managedObjectContext = managedObjectStore.mainQueueManagedObjectContext;
     
-    self.window.rootViewController = tabController;
+    self.window.rootViewController = loginViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

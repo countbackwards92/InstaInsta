@@ -24,6 +24,7 @@
     self.website = [attributes valueForKey:@"website"];
     self.username = [attributes valueForKey:@"username"];
     self.user_id = [attributes valueForKey:@"id"];
+    self.profile_picture = [attributes valueForKey:@"profile_picture"];
     return self;
 }
 

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ANUserPageViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface ANUserPageViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSString *user_id;
 @property BOOL hide_bar;
