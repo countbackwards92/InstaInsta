@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UITabBarController *coolController;
+@property (strong, nonatomic) UIViewController *offlineController;
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

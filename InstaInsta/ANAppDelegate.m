@@ -67,6 +67,7 @@
     [tabController addChildViewController:tagNavController];
     [tabController addChildViewController:offNavController];
     
+    self.offlineController = offNavController;
     tabController.tabBar.translucent = NO;
     
     self.coolController = tabController;

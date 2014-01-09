@@ -89,13 +89,14 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
          UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No internet connection - no offline data stored" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
          [offlinealert show];
      } else {
-         UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+         UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:[[error localizedDescription] stringByAppendingString:@" Only offline storage is available."] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
          [offlinealert show];
+
          [UIView transitionWithView:self.view.window.rootViewController.view
                                duration:0.5
                                 options:UIViewAnimationOptionTransitionFlipFromLeft
                              animations:^{
-                                 self.view.window.rootViewController = ApplicationDelegate.coolController;
+                                 self.view.window.rootViewController = ApplicationDelegate.offlineController;
                              }
                              completion:nil];
      }
