@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[RKObjectManager getObjectsAtPath:parameters:success:failure:]:RKObjectManager.m">
-      </ContextState>
-      <ContextState
          contextName = "GLOBAL">
          <PersistentStrings>
             <PersistentString
@@ -14,7 +11,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[ANLoginViewController webView:shouldStartLoadWithRequest:navigationType:]:ANLoginViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[ANPhotoViewController viewDidLoad]:ANPhotoViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ANLoginViewController webView:didFailLoadWithError:]:ANLoginViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "ApplicationDelegate.offlineController">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[ANLoginViewController viewDidLoad]:ANLoginViewController.m">
@@ -36,7 +44,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ANLoginViewController webView:shouldStartLoadWithRequest:navigationType:]:ANLoginViewController.m">
+         contextName = "-[RKObjectManager getObjectsAtPath:parameters:success:failure:]:RKObjectManager.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

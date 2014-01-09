@@ -91,12 +91,19 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
      } else {
          UIAlertView *offlinealert = [[UIAlertView alloc] initWithTitle:@"Error" message:[[error localizedDescription] stringByAppendingString:@" Only offline storage is available."] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
          [offlinealert show];
+         UIViewController *v1 = (UIViewController *) ApplicationDelegate.coolController.viewControllers[0];
+         v1.tabBarItem.enabled = NO;
+         v1 = (UIViewController *) ApplicationDelegate.coolController.viewControllers[1];
+         v1.tabBarItem.enabled = NO;
+         v1 = (UIViewController *) ApplicationDelegate.coolController.viewControllers[2];
+         v1.tabBarItem.enabled = NO;
+         [ApplicationDelegate.coolController setSelectedIndex:3];
 
          [UIView transitionWithView:self.view.window.rootViewController.view
                                duration:0.5
                                 options:UIViewAnimationOptionTransitionFlipFromLeft
                              animations:^{
-                                 self.view.window.rootViewController = ApplicationDelegate.offlineController;
+                                 self.view.window.rootViewController = ApplicationDelegate.coolController;
                              }
                              completion:nil];
      }
